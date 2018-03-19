@@ -35,6 +35,6 @@ weight = 5
 
 # Biography
 
-Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Professor Yang graduated from Soochow University economic department, the Ling Tung University Vice President, Dean of College of Finance and economics, Executive Master of business (EMBA) Professor, engaged in banking, financial risk, investment portfolio, performance evaluation, economic research and teaching.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+Professeur Yang est diplômé du département du commerce de l'Université de Soochow, actuellement en fonction de vice-président de l'Université Ling Tung, Doyen du Collège de Finance et d'Économie, Professeur de Master Exécutif (EMBA), est depuis longtemps engagé dans le secteur bancaire, risque financier, portefeuille d'investissement, évaluation de la performance, recherche économique et enseignement.
