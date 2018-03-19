@@ -14,6 +14,7 @@ weight = 5
     "DEA",
     "R",
     "python",
+    "績效評估"
   ]
 
 # List your qualifications (such as academic degrees).
