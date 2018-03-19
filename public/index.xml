@@ -11,6 +11,229 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>嶺東科大-FinTech-第1堂課</title>
+      <link>/post/fintech-1/</link>
+      <pubDate>Mon, 19 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/fintech-1/</guid>
+      <description>&lt;div id=&#34;1r&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;第1步：R工作目錄指令&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;setwd( &amp;quot;/Users/StevenYang/Desktop/&amp;quot;)
+getwd()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;/Users/StevenYang/Desktop&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;2rquantmod&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;第2步：R使用quantmod套件指令&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: xts&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: zoo&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Attaching package: &amp;#39;zoo&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following objects are masked from &amp;#39;package:base&amp;#39;:
+## 
+##     as.Date, as.Date.numeric&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: TTR&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Version 0.4-0 included new data defaults. See ?getSymbols.&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;3ryahooaapl&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;第3步：R網路抓取Yahoo中AAPL股價資料&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;getSymbols(&amp;quot;AAPL&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;#39;getSymbols&amp;#39; currently uses auto.assign=TRUE by default, but will
+## use auto.assign=FALSE in 0.5-0. You will still be able to use
+## &amp;#39;loadSymbols&amp;#39; to automatically load data. getOption(&amp;quot;getSymbols.env&amp;quot;)
+## and getOption(&amp;quot;getSymbols.auto.assign&amp;quot;) will still be checked for
+## alternate defaults.
+## 
+## This message is shown once per session and may be disabled by setting 
+## options(&amp;quot;getSymbols.warning4.0&amp;quot;=FALSE). See ?getSymbols for details.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## WARNING: There have been significant changes to Yahoo Finance data.
+## Please see the Warning section of &amp;#39;?getSymbols.yahoo&amp;#39; for details.
+## 
+## This message is shown once per session and may be disabled by setting
+## options(&amp;quot;getSymbols.yahoo.warning&amp;quot;=FALSE).&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;AAPL&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(AAPL)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##            AAPL.Open AAPL.High AAPL.Low AAPL.Close AAPL.Volume
+## 2007-01-03  12.32714  12.36857 11.70000   11.97143   309579900
+## 2007-01-04  12.00714  12.27857 11.97429   12.23714   211815100
+## 2007-01-05  12.25286  12.31428 12.05714   12.15000   208685400
+## 2007-01-08  12.28000  12.36143 12.18286   12.21000   199276700
+## 2007-01-09  12.35000  13.28286 12.16429   13.22429   837324600
+## 2007-01-10  13.53571  13.97143 13.35000   13.85714   738220000
+##            AAPL.Adjusted
+## 2007-01-03      8.104137
+## 2007-01-04      8.284014
+## 2007-01-05      8.225021
+## 2007-01-08      8.265641
+## 2007-01-09      8.952269
+## 2007-01-10      9.380682&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tail(AAPL)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##            AAPL.Open AAPL.High AAPL.Low AAPL.Close AAPL.Volume
+## 2018-03-09    177.96    180.00   177.39     179.98    32185200
+## 2018-03-12    180.29    182.39   180.21     181.72    32207100
+## 2018-03-13    182.59    183.50   179.24     179.97    31693500
+## 2018-03-14    180.32    180.52   177.81     178.44    29368400
+## 2018-03-15    178.50    180.24   178.07     178.65    22743800
+## 2018-03-16    178.65    179.12   177.62     178.02    37876900
+##            AAPL.Adjusted
+## 2018-03-09        179.98
+## 2018-03-12        181.72
+## 2018-03-13        179.97
+## 2018-03-14        178.44
+## 2018-03-15        178.65
+## 2018-03-16        178.02&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#包含每天開盤價(AAPL.Open)、最高價(AAPL.High)、最低價(AAPL.Low)、收盤價(AAPL.Close)、成交量(AAPL.Volume)、(還原權值)AAPL.Adjusted。&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;4rapplek&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;第4步：R指令劃出APPLE股價之K線圖&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;chartSeries(AAPL)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2018-03-19-fintech-1_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;getDividends(&amp;quot;AAPL&amp;quot;) &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##            AAPL.div
+## 1987-05-11     0.12
+## 1987-08-10     0.06
+## 1987-11-17     0.08
+## 1988-02-12     0.08
+## 1988-05-16     0.08
+## 1988-08-15     0.08
+## 1988-11-21     0.10
+## 1989-02-17     0.10
+## 1989-05-22     0.10
+## 1989-08-21     0.10
+## 1989-11-17     0.11
+## 1990-02-16     0.11
+## 1990-05-21     0.11
+## 1990-08-20     0.11
+## 1990-11-16     0.12
+## 1991-02-15     0.12
+## 1991-05-20     0.12
+## 1991-08-19     0.12
+## 1991-11-18     0.12
+## 1992-02-14     0.12
+## 1992-06-01     0.12
+## 1992-08-17     0.12
+## 1992-11-30     0.12
+## 1993-02-12     0.12
+## 1993-05-28     0.12
+## 1993-08-16     0.12
+## 1993-11-19     0.12
+## 1994-02-07     0.12
+## 1994-05-27     0.12
+## 1994-08-15     0.12
+## 1994-11-18     0.12
+## 1995-02-13     0.12
+## 1995-05-26     0.12
+## 1995-08-16     0.12
+## 1995-11-21     0.12
+## 2012-08-09     2.65
+## 2012-11-07     2.65
+## 2013-02-07     2.65
+## 2013-05-09     3.05
+## 2013-08-08     3.05
+## 2013-11-06     3.05
+## 2014-02-06     3.05
+## 2014-05-08     3.29
+## 2014-08-07     0.47
+## 2014-11-06     0.47
+## 2015-02-05     0.47
+## 2015-05-07     0.52
+## 2015-08-06     0.52
+## 2015-11-05     0.52
+## 2016-02-04     0.52
+## 2016-05-05     0.57
+## 2016-08-04     0.57
+## 2016-11-03     0.57
+## 2017-02-09     0.57
+## 2017-05-11     0.63
+## 2017-08-10     0.63
+## 2017-11-10     0.63
+## 2018-02-09     0.63&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#获取股息数据
+#getDividends函数可以获取上市公司的股息数据。&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;getSplits(&amp;quot;AAPL&amp;quot;) &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##             AAPL.spl
+## 1987-06-16 0.5000000
+## 2000-06-21 0.5000000
+## 2005-02-28 0.5000000
+## 2014-06-09 0.1428571&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#获取除权除息数据
+#使用getSplits()函数获取上市公司的除权除息数据：&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;chartSeries(AAPL[&amp;quot;2014-01::2018-03&amp;quot;],theme=&amp;quot;white&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2018-03-19-fintech-1_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#我只要看此段區間的資料,同時把版面調成白色&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;5rapple&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;第5步：R指令劃出APPLE股價之技術指標&lt;/h1&gt;
+&lt;div id=&#34;20&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;5.1 畫出20日平均線(月線)&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ma_20&amp;lt;-runMean(AAPL[,4],n=20)
+#AAPL[,4]代表蘋果股價每日的收盤價(AAPL.Close)
+#因為收盤價放在第四行所以這樣表示。
+#runMean這個函數以即n=20表示計算過去20天的平均數。
+#因此。ma_20是一個時間序列，每一時間點表示過去20天的收盤平均。
+
+addTA(ma_20,on=1,col=&amp;quot;blue&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2018-03-19-fintech-1_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#將20日均線(ma_20)的圖形，用藍色線條加到目前K線圖上 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;60&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;5.2 畫出60日平均線(季線)&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ma_60&amp;lt;-runMean(AAPL[,4],n=60)
+#runMean這個函數以即n=60表示計算過去60天的平均數。
+#因此。ma_60是一個時間序列，每一時間點表示過去60天的收盤平均。
+
+addTA(ma_60,on=1,col=&amp;quot;red&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2018-03-19-fintech-1_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#將60日均線(ma_60)的圖形，用紅色線條加到目前K線圖上 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;6apple&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;第6步：買賣APPLE股價策略回測&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;position&amp;lt;-Lag(ifelse(ma_20&amp;gt;ma_60, 1,0))
+
+#為了方便講解回測，我們用最普通的均線策略：當20ma大於60ma時，全壓買進
+#當20ma小於60ma時,空手
+#position為一個時間序列，以日為單位，如果20ma大於60ma，設值為1;
+#否則設值為0
+#由於我們是日資料,訊號發生時只能隔天做交易，故將這向量全部往後遞延一天
+tail(position)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##            Lag.1
+## 2018-03-09     0
+## 2018-03-12     1
+## 2018-03-13     1
+## 2018-03-14     1
+## 2018-03-15     1
+## 2018-03-16     1&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;7rocapple&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;第7步：ROC買賣APPLE股價策略回測&lt;/h1&gt;
+&lt;p&gt;Rate Of Change(ROC):變動率指標變動率指標是一個動能指標，它測量一定時期內股票價格的變化比率。以當日的收盤價和N天前的收盤價比較，通過計算股價某一段時間內收盤價變動的比例，應用價格的移動比較來測量價位動量，達到事先探測股價買賣供需力量的強弱，進而分析股價的趨勢及其是否有轉勢的意願，屬於反趨向的指標之一。&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#ROC計算：log(今天收盤價/昨天收盤價)，乘上poistion代表。
+#若1則持有，若0則空手。
+
+return&amp;lt;-ROC(Cl(AAPL))*position
+
+#由於我們策略條件是60ma&amp;gt;20ma之後才會交易，故統計值從2014-08-01開始;
+#另外APPLE在2004年有配發股利，故我們只統計2007年到2014年的資料
+
+return&amp;lt;-return[&amp;#39;2014-01-01/2018-03-14&amp;#39;]
+#cumsum計算累計值，即將每一分量之前的值累加起來。
+#取exp函數是要計算累計損亦。
+#(這裡運用國中數學:log(a)+log(b)=log(ab)，exp(log(ab))=ab)
+
+return&amp;lt;-exp(cumsum(return))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#將累計損益圖畫出來。此策略的損益圖形如下，
+#橫軸為時間軸，縱軸為報酬率，1代表原始自有資金100%。
+
+plot(return,xlab=&amp;quot;year &amp;quot;,ylab=&amp;quot;%&amp;quot;, main=&amp;quot;APPLE&amp;quot;) 
+abline(h = 0.95, v = 0.95,col = &amp;quot;red&amp;quot;)
+grid()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2018-03-19-fintech-1_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Example Talk</title>
       <link>/talk/example-talk/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
