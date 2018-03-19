@@ -21,5 +21,5 @@ I am a teaching instructor for the following courses at LTU:
 - MF17003011:時間序列分析
 - MF27004021:財金論文研討（二）
 - VA17002011:研究方法
-- VF27002021:財金論文研討（二）
+
 
