@@ -14,11 +14,11 @@ authors = ["Yang Yung-Lieh", "Cho Tsui-yueh*","Huang Ming-Hsiang"]
 # 4 = Technical report
 # 5 = Book
 # 6 = Book chapter
-publication_types = ["1"]
+publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "In *Hitotsubashi Journal of Economics*, SSCI."
-publication_short = "In *HJE*"
+publication = " *Hitotsubashi Journal of Economics*, SSCI."
+publication_short = "*HJE*"
 
 # Abstract and optional shortened version.
 abstract = "This study extends the stochastic metafrontier model (SMF) of Huang, Huang and Liu (2014) to compare the meta-cost banking efficiency in China and Taiwan from 2007 to 2013, and to analyze the impacts on cost efficiency following the implementation of the Economic Cooperation Framework Agreement (ECFA). The empirical tests show that the banking sectors in both China and Taiwan implemented distinct technology-related policies during this period. Following the implementation of ECFA, the meta-cost efficiency for Taiwan's banking sectors showed a distinct improvement. Besides, the Chinese banks which had established branches in Taiwan experienced a significant enhancement in meta-cost efficiency. Several managerial insights and implications are discussed."
