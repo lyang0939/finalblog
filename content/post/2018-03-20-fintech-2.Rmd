@@ -1,20 +1,13 @@
 ---
-title: "嶺東科大-FinTech-第2堂課"
-author: '楊永列'
-date: '2018-03-16'
-output:
-  html_document:
-    theme: united
-    toc: yes   
-  pdf_document:
-    highlight: zenburn
-    toc: yes
-  word_document:
-    toc: yes
-subtitle: 利用R語言-劃大立光股王股價k線及技術指標
-institute: 嶺東科技大學財經學院(台灣台中)
----  
-  
+title: 嶺東科大-FinTech-第2堂課
+author: 楊永列
+date: '2018-03-20'
+slug: fintech-2
+categories:
+  - R
+tags:
+  - R
+---
 # 第1步：獲取R工作目錄指令 
 ```{r}
 
@@ -150,3 +143,4 @@ grid()
 ```
 
  
+

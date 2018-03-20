@@ -1,19 +1,13 @@
 ---
-title: "嶺東科大-FinTech-第2堂課"
-author: '楊永列'
-date: '2018-03-16'
-output:
-  html_document:
-    theme: united
-    toc: yes   
-  pdf_document:
-    highlight: zenburn
-    toc: yes
-  word_document:
-    toc: yes
-subtitle: 利用R語言-劃大立光股王股價k線及技術指標
-institute: 嶺東科技大學財經學院(台灣台中)
----  
+title: 嶺東科大-FinTech-第2堂課
+author: 楊永列
+date: '2018-03-20'
+slug: fintech-2
+categories:
+  - R
+tags:
+  - R
+---
 
 
 
@@ -912,7 +906,7 @@ d=getSymbols(&quot;3008.TW&quot;)   # 以大力光為例</code></pre>
 <div id="4rk" class="section level1">
 <h1>第4步：R指令劃出大立光股王股價之K線圖</h1>
 <pre class="r"><code>chartSeries(tw3008)</code></pre>
-<p><img src="/post/2018-03-16-LTU-Fintech-02-copy_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/post/2018-03-20-fintech-2_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <pre class="r"><code>getDividends(&quot;3008.tw&quot;) </code></pre>
 <pre><code>##            3008.tw.div
 ## 2002-08-28     1.77515
@@ -946,7 +940,7 @@ d=getSymbols(&quot;3008.TW&quot;)   # 以大力光為例</code></pre>
 <pre class="r"><code>#获取除权除息数据
 #使用getSplits()函数获取上市公司的除权除息数据：</code></pre>
 <pre class="r"><code>chartSeries(tw3008[&quot;2017-01::2018-03&quot;],theme=&quot;white&quot;)</code></pre>
-<p><img src="/post/2018-03-16-LTU-Fintech-02-copy_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="/post/2018-03-20-fintech-2_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <pre class="r"><code>#我只要看此段區間的資料,同時把版面調成白色</code></pre>
 </div>
 <div id="5r" class="section level1">
@@ -960,7 +954,7 @@ d=getSymbols(&quot;3008.TW&quot;)   # 以大力光為例</code></pre>
 #因此。ma_20是一個時間序列，每一時間點表示過去20天的收盤平均。
 
 addTA(ma_20,on=1,col=&quot;blue&quot;)</code></pre>
-<p><img src="/post/2018-03-16-LTU-Fintech-02-copy_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/post/2018-03-20-fintech-2_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <pre class="r"><code>#將20日均線(ma_20)的圖形，用藍色線條加到目前K線圖上 </code></pre>
 </div>
 <div id="60" class="section level2">
@@ -970,7 +964,7 @@ addTA(ma_20,on=1,col=&quot;blue&quot;)</code></pre>
 #因此。ma_60是一個時間序列，每一時間點表示過去60天的收盤平均。
 
 addTA(ma_60,on=1,col=&quot;red&quot;)</code></pre>
-<p><img src="/post/2018-03-16-LTU-Fintech-02-copy_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/post/2018-03-20-fintech-2_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <pre class="r"><code>#將60日均線(ma_60)的圖形，用紅色線條加到目前K線圖上 </code></pre>
 </div>
 </div>
@@ -1015,5 +1009,5 @@ return&lt;-exp(cumsum(return))</code></pre>
 plot(return,xlab=&quot;year &quot;,ylab=&quot;%&quot;, main=&quot;tw3008&quot;) 
 abline(h = 0.95, v = 0.95,col = &quot;red&quot;)
 grid()</code></pre>
-<p><img src="/post/2018-03-16-LTU-Fintech-02-copy_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="/post/2018-03-20-fintech-2_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 </div>
