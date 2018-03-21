@@ -1,17 +1,26 @@
+library(rvest)
 ---
-title: 嶺東科大-FinTech-第1堂課
-author: 楊永列
-date: '2018-03-19'
-slug: fintech-1
-categories:
-  - R
-tags:
-  - R
----
-
-# 第1步：獲取R工作目錄指令 
+title: "嶺東科大-FinTech-第1堂課"
+author: '楊永列'
+date: '2018-03-15'
+output:
+  html_document:
+    theme: united
+    toc: yes 
+  pdf_document:
+    highlight: zenburn
+    toc: yes
+  word_document:
+    toc: yes
+subtitle: 利用R語言-劃AAPL股價k線及技術指標
+institute: 嶺東科技大學財經學院(台灣台中)
+---  
+  
+# 第1步：R工作目錄指令 
 
 ```{r}
+getwd()
+setwd("/Users/StevenYang/Desktop/RBlog/lyang201801/finalblog/content/post")
 getwd()
 ```
 
@@ -134,3 +143,5 @@ plot(return,xlab="year ",ylab="%", main="APPLE")
 abline(h = 0.95, v = 0.95,col = "red")
 grid()
 ```
+
+ 
